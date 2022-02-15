@@ -1,0 +1,107 @@
+Tanda 1, métodos para la clase vector_t
+1. Mostrar por pantalla todos los elementos del vector invocante distintos de cero con una precisión menor de 1.0e-3 (variante de "Recorrido de un vector (1)" pg. 5 y "Comparación de números reales" pg. 4)
+Grupo 1: 
+     template<class T>
+     void
+     vector_t<T>::NotZero() {
+     const double epsilon = 1 * (pow(10, -3));
+    for(int i = 0; i < get_size(); i++) {
+           if(fabs(at(i)) > epsilon) {
+        cout << at(i) << " ";
+        }
+           }
+       cout << endl;
+        }
+
+Grupo :  
+
+2. Modificar el vector invocante para elevar a una potencia dada cada uno de sus elementos  (variante de "Recorrido de un vector (1)" pg. 5)
+Grupo 2: 
+template<class T> void vector_t::potencia(const double valor)  {
+cada elemento del vector elvarlo al valor
+}
+
+Grupo : 
+
+
+3. Calcular el producto escalar del vector invocante y otro vector  (variante de "Producto escalar de dos vectores" pg. 12)
+Grupo 3: 
+
+template<class T> double vector_t<T>::productoEscalar(const vector_t<T>& v){
+
+  double producto_escalar =0;
+  for(int i =0; i < get_size(); i++) {  
+    producto_escalar += get_val(i)* v[i];
+  }
+  return producto_escalar;
+}
+Grupo : 
+
+
+4. Comprobar si el vector invocante contiene algún elemento igual a otro valor pasado por parámetro con una precisión menor de 1.0e-3 en cada elemento  (variante de "Búsqueda secuencial de un elemento" pg. y "Comparación de números reales" pg. 4)
+Grupo 4: 
+
+template <T> 
+bool 
+vector_t<T>::Comprobacion(const vector_T<T>& v, int r){ //r valor introducido por el usuario
+bool result = false;
+float precision = 0.001;
+for(int i = 0; v.get_size(); i++){
+if((v[i] - r) <= precision){
+result = true;
+}
+}
+return result;
+}
+
+Grupo : 
+
+
+5. Calcular el módulo del vector invocante  (variante de "Suma de los elementos de un vector" pg. 10 ó "Producto escalar de dos vectores" pg. 12)
+Grupo 5: 
+
+Grupo : 
+
+
+6. Calcular el ángulo formado entre  el vector invocante y otro pasado por parámetro, apoyarse en el método desarrollado en el punto anterior  (variante de "Suma de los elementos de un vector" pg. 10 ó "Producto escalar de dos vectores" pg. 12)
+
+Grupo 6: 
+
+Grupo : 
+
+
+Tanda 2, métodos para la clase sparse_vector_t
+1. Mostrar por pantalla todos los elementos del vector invocante distintos de cero con una precisión menor de 1.0e-3 (variante de "Recorrido de un vector (1)" pg. 5 y "Comparación de números reales" pg. 4)
+Grupo 1: 
+
+Grupo : 
+
+
+2. Modificar el vector invocante para elevar a una potencia dada cada uno de sus elementos  (variante de "Recorrido de un vector (1)" pg. 5)
+Grupo 2: 
+
+Grupo : 
+
+
+3. Calcular el producto escalar del vector invocante y otro vector  (variante de "Producto escalar de dos vectores" pg. 12)
+Grupo 3: 
+
+Grupo : 
+
+
+4. Comprobar si el vector invocante contiene algún elemento igual a otro valor pasado por parámetro con una precisión menor de 1.0e-3 en cada elemento  (variante de "Búsqueda secuencial de un elemento" pg. y "Comparación de números reales" pg. 4)
+Grupo 4: 
+
+Grupo : 
+
+
+5. Calcular el módulo del vector invocante  (variante de "Suma de los elementos de un vector" pg. 10 ó "Producto escalar de dos vectores" pg. 12)
+Grupo 5: 
+
+Grupo : 
+
+
+6. Calcular el ángulo formado entre  el vector invocante y otro pasado por parámetro, apoyarse en el método desarrollado en el punto anterior  (variante de "Suma de los elementos de un vector" pg. 10 ó "Producto escalar de dos vectores" pg. 12)
+Grupo 6: 
+
+Grupo : 

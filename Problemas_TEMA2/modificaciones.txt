@@ -1,0 +1,82 @@
+
+
+////////////////////////////////////////////
+//MODIFICACI0N: multiplicar coeficientes del polinomio por un escalar
+////////////////////////////////////////////
+void SllPolynomial::PolEscalar(SllPolynomial& sllpoly, const double x){
+  SllPolyNode* aux{get_head()};
+  while (aux != NULL){
+    sllpoly.push_front(new SllPolyNode(pair_double_t(aux->get_data().get_val()*x, aux->get_data().get_inx())));
+    aux = aux->get_next();
+  }
+}
+
+////////////////////////////////////////////
+//MODIFICACI0N: coger el primer elemento y el ultimo del polinomio y hacer la media de los 2
+////////////////////////////////////////////
+double SllPolynomial::Media(){
+  double media{0.0};
+  double suma{0.0};
+  SllPolyNode* aux{get_head()};
+  SllPolyNode* aux2{get_head()};
+  while (aux != NULL){
+    suma = aux->get_data().get_val();
+    aux = aux->get_next(); ////////final
+  }
+  suma += aux2->get_data().get_val();
+  media = suma/2;
+    return media;
+}
+
+
+////////////////////////////////////////////
+//MODIFICACI0N: coger el ultimo y penultimo elemento del polinomio y hacer la media de los 2
+////////////////////////////////////////////
+double SllPolynomial::Media2(){
+  double media{0.0};
+  double suma{0.0};
+  double suma2{0.0};
+  SllPolyNode* aux{get_head()};
+  SllPolyNode* aux2{get_head()};
+
+  aux = aux->get_next(); 
+  while (aux != NULL){
+    suma = aux->get_data().get_val();
+    suma2 = aux2->get_data().get_val();
+
+    aux = aux->get_next(); ////////final
+    aux2 = aux2->get_next();
+  }
+  // suma += aux2->get_data().get_val();
+  media = suma + suma2;
+    return media/2;
+}
+
+////////////////////////////////////////////
+//MODIFICACI0N: coger un polinomio, y crear otro pero solo con los coeficientes pares
+////////////////////////////////////////////
+void SllPolynomial::IndicesPares(SllPolynomial& sllpol_){
+  SllPolyNode* aux{get_head()};
+  int var_aux{0};
+  while (aux != NULL){
+    var_aux = aux->get_data().get_inx();
+    if (var_aux % 2 == 0)
+      sllpol_.push_front(new SllPolyNode(pair_double_t(aux->get_data().get_val(), aux->get_data().get_inx())));
+    aux = aux->get_next();
+  }
+}
+
+
+////////////////////////////////////////////
+//MODIFICACI0N: coger un polinomio, y crear otro pero solo con los coeficientes impares
+////////////////////////////////////////////
+void SllPolynomial::IndicesImpares(SllPolynomial& sllpolo){
+  SllPolyNode* aux{get_head()};
+  int var_aux{0};
+  while (aux != NULL){
+    var_aux = aux->get_data().get_inx();
+    if (var_aux % 2 != 0)
+      sllpolo.push_front(new SllPolyNode(pair_double_t(aux->get_data().get_val(), aux->get_data().get_inx())));
+    aux = aux->get_next();
+  }
+}
